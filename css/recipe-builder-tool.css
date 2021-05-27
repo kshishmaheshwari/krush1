@@ -1,0 +1,1230 @@
+@charset "UTF-8";
+/*------------------------------------*\
+    SASS Tools
+\*------------------------------------*/
+/*------------------------------------*\
+    Variables
+\*------------------------------------*/
+/*------------------------------------*\
+    Responsive variables
+\*------------------------------------*/
+/*----------------------------------------------------*\
+    https://github.com/MoOx/postcss-cssnext/issues/253
+    We can't use custom props in media
+    queries so using a sass variable to
+    share between :root and custom media queries
+\*----------------------------------------------------*/
+/*------------------------------------*\
+    Color variables
+\*------------------------------------*/
+/*------------------------------------*\
+ 	Site z indexing
+\*------------------------------------*/
+/*------------------------------------*\
+    Font variables
+\*------------------------------------*/
+/*------------------------------------*\
+    § Grid
+\*------------------------------------*/
+/*------------------------------------*\
+    Utilities
+\*------------------------------------*/
+/*------------------------------------*\
+    SASS functions
+\*------------------------------------*/
+/*------------------------------------*\
+    § Grid column widths
+\*------------------------------------*/
+/*------------------------------------*\
+    § em
+\*------------------------------------*/
+/*------------------------------------*\
+     § Z index
+\*------------------------------------*/
+/*------------------------------------*\
+    SASS mixins
+\*------------------------------------*/
+/*------------------------------------*\
+     § Input placeholder
+\*------------------------------------*/
+/*------------------------------------*\
+     § Pseudo
+\*------------------------------------*/
+/*------------------------------------*\
+     § Responsive Ratio
+\*------------------------------------*/
+/*------------------------------------*\
+    § Grid container
+\*------------------------------------*/
+/*------------------------------------*\
+    § Grid item
+\*------------------------------------*/
+/*------------------------------------*\
+    § Title
+\*------------------------------------*/
+/*------------------------------------*\
+    Custom semantic media queries
+\*------------------------------------*/
+/*----------------------------------------------------*\
+    https://github.com/MoOx/postcss-cssnext/issues/253
+    We can't use variables in media
+    queries so using a sass variable to
+    share between :root and custom media queries
+    @see variables/responsive.scss
+\*----------------------------------------------------*/
+/*------------------------------------*\
+    Recipe Intro
+\*------------------------------------*/
+.recipe-welcome {
+  -webkit-transition: opacity 5s;
+  transition: opacity 5s;
+}
+
+.recipe-welcome.is-show {
+  -webkit-animation: fadein .4s forwards;
+          animation: fadein .4s forwards;
+}
+
+.recipe-intro {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  margin: 0 auto;
+  height: calc(100vh - 8rem);
+  max-width: 60rem;
+  padding-bottom: 5rem;
+  text-align: center;
+}
+
+@media (min-width: 90em) {
+  .recipe-intro {
+    padding-bottom: 10rem;
+  }
+}
+
+@-webkit-keyframes fadein {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes fadein {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+/*------------------------------------*\
+    Recipe Loading
+\*------------------------------------*/
+.recipe-loading-container {
+  height: calc(100vh - 6rem);
+}
+
+@media (min-width: 90em) {
+  .recipe-loading-container {
+    height: calc(100vh - 8rem);
+  }
+}
+
+.recipe-loading {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  margin: 0 auto;
+  padding: 0 2rem;
+  text-align: center;
+  z-index: 9;
+  background: #ffffff;
+  color: #000000;
+}
+
+.recipe-loading__icon {
+  margin: 0 auto 3rem;
+  width: 6rem;
+  height: 6rem;
+}
+
+.recipe-loading__media-item {
+  width: 100%;
+  height: 100%;
+}
+
+.recipe-loading__media-item--skin-goals {
+  display: block;
+  width: 6rem;
+  height: 6rem;
+  background: url(//cdn.shopify.com/s/files/1/0428/8498/9091/t/21/assets/products.svg?v=1348360988796722719) no-repeat center;
+  background-size: contain;
+}
+
+.recipe-loading__media-item--hair-types {
+  display: block;
+  width: 6rem;
+  height: 6rem;
+  background: url(//cdn.shopify.com/s/files/1/0428/8498/9091/t/21/assets/hair-icons.svg?v=7649148917466956794) no-repeat center;
+  background-size: contain;
+}
+
+/*------------------------------------*\
+    Recipe Questions
+\*------------------------------------*/
+.recipe-overflow {
+  overflow: hidden;
+  min-height: calc(100vh - 6rem);
+}
+
+@media (min-width: 90em) {
+  .recipe-overflow {
+    min-height: calc(80vh - 8rem);
+  }
+}
+
+.recipe-questions-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  min-height: calc(100vh - 6rem);
+  padding-top: 4rem;
+}
+
+@media (min-width: 90em) {
+  .recipe-questions-container {
+    min-height: calc(80vh - 8rem);
+    padding-top: 0;
+  }
+}
+
+.recipe-questions {
+  position: relative;
+}
+
+.recipe-questions__title {
+  margin-bottom: 3rem;
+}
+
+@media (min-width: 48em) {
+  .recipe-questions__title {
+    -ms-flex-preferred-size: calc(58.33333% - 0rem);
+        flex-basis: calc(58.33333% - 0rem);
+    max-width: calc(58.33333% - 0rem);
+    margin-left: 0rem;
+  }
+}
+
+@media (min-width: 64em) {
+  .recipe-questions__title {
+    -ms-flex-preferred-size: calc(41.66667% - 0rem);
+        flex-basis: calc(41.66667% - 0rem);
+    max-width: calc(41.66667% - 0rem);
+    margin-left: 0rem;
+  }
+}
+
+.recipe-questions__footer {
+  position: fixed;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  bottom: 0;
+  left: 0rem;
+  width: 100%;
+  padding: 1.5rem 2rem 2.2rem 6rem;
+  background: #000000;
+  border-top: 0.1rem solid #ffffff;
+  z-index: 3;
+}
+
+@media (min-width: 48em) {
+  .recipe-questions__footer {
+    position: relative;
+    left: auto;
+    width: 100%;
+    margin-top: 7rem;
+    padding: 1.5rem 0 2.5rem;
+  }
+}
+
+.recipe-questions__footer-title {
+  font-size: 1.8rem;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+@media (min-width: 48em) {
+  .recipe-questions__footer-title {
+    display: none;
+  }
+}
+
+.recipe-questions__footer-steps {
+  padding-right: 2rem;
+  -ms-flex-preferred-size: 15rem;
+      flex-basis: 15rem;
+  -ms-flex-negative: 0;
+      flex-shrink: 0;
+}
+
+@media (min-width: 48em) {
+  .recipe-questions__footer-steps {
+    -ms-flex-preferred-size: auto;
+        flex-basis: auto;
+  }
+}
+
+.recipe-questions-progress {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: .7rem;
+  z-index: 5;
+}
+
+@media (min-width: 48em) {
+  .recipe-questions-progress {
+    height: 1rem;
+  }
+}
+
+@media (min-width: 64em) {
+  .recipe-questions-progress {
+    position: absolute;
+  }
+}
+
+.recipe-questions-progress__bar {
+  margin: 0 auto;
+  width: 100%;
+  height: 100%;
+  max-width: 192rem;
+  background: url(//cdn.shopify.com/s/files/1/0428/8498/9091/t/21/assets/hero-border.jpg?v=9396253500500364630);
+  background-size: cover;
+}
+
+@media (min-width: 64em) {
+  .recipe-questions-progress__bar {
+    background-image: url(//cdn.shopify.com/s/files/1/0428/8498/9091/t/21/assets/hero-border-desktop.jpg?v=8396927021248050518);
+  }
+}
+
+.recipe-questions-progress__bar::after {
+  content: "";
+  display: block;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  height: 100%;
+  background: #000000;
+  opacity: .7;
+}
+
+.recipe-questions-progress__bar[data-step="1"]::after {
+  width: 75%;
+}
+
+.recipe-questions-progress__bar[data-step="2"]::after {
+  width: 50%;
+}
+
+.recipe-questions-progress__bar[data-step="3"]::after {
+  width: 25%;
+}
+
+.recipe-questions-progress__bar[data-step="4"]::after {
+  width: 0%;
+}
+
+.recipe-questions__footer-right {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.recipe-questions__footer-info {
+  position: fixed;
+  left: 0;
+  bottom: 8rem;
+  width: 100%;
+  margin-bottom: .1rem;
+  padding: 1.2rem 2.5rem;
+  border-top: 0.1rem solid rgba(255, 255, 255, 0.2);
+  background: rgba(0, 0, 0, 0.8);
+  font-size: 1.5rem;
+  font-weight: bold;
+  text-align: center;
+  z-index: 1;
+}
+
+@media (min-width: 48em) {
+  .recipe-questions__footer-info {
+    position: relative;
+    left: auto;
+    bottom: auto;
+    width: auto;
+    margin: 0;
+    padding: 0 4rem 0 0;
+    background: none;
+    border: 0;
+    text-align: left;
+  }
+}
+
+/*------------------------------------*\
+    Recipe Options
+\*------------------------------------*/
+@media (min-width: 48em) {
+  .recipe-options {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    margin-left: -1rem;
+  }
+}
+
+@media (min-width: 90em) {
+  .recipe-options {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    margin-left: -2.2rem;
+  }
+}
+
+.recipe-options__option {
+  position: relative;
+  margin-bottom: .5rem;
+}
+
+.recipe-options__option.has-tooltip {
+  padding-left: 5rem;
+}
+
+@media (min-width: 48em) {
+  .recipe-options__option {
+    -ms-flex-preferred-size: calc(33.33333% - 1rem);
+        flex-basis: calc(33.33333% - 1rem);
+    max-width: calc(33.33333% - 1rem);
+    margin-left: 1rem;
+    margin-bottom: 1rem;
+  }
+}
+
+@media (min-width: 90em) {
+  .recipe-options__option {
+    -ms-flex-preferred-size: calc(33.33333% - 2.2rem);
+        flex-basis: calc(33.33333% - 2.2rem);
+    max-width: calc(33.33333% - 2.2rem);
+    margin-left: 2.2rem;
+    margin-bottom: 2.4rem;
+  }
+}
+
+.recipe-option__button {
+  position: relative;
+  display: block;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  width: 100%;
+  height: 100%;
+  padding: 1.3rem 4.5rem 1.3rem 1.5rem;
+  color: #000000;
+  background: #ffffff;
+  border: 0.1rem solid #ffffff;
+  text-decoration: none;
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+@media (min-width: 48em) {
+  .recipe-option__button {
+    padding: 2rem 4.5rem 2rem 1.5rem;
+  }
+}
+
+.recipe-option__button.selected {
+  background: #000000;
+  color: #ffffff;
+}
+
+.recipe-option__button.selected .recipe-option__button-icon::before {
+  -webkit-transform: translate(-0.3rem, 0.2rem) rotate(45deg) scaleX(0.4);
+          transform: translate(-0.3rem, 0.2rem) rotate(45deg) scaleX(0.4);
+}
+
+.recipe-option__button.selected .recipe-option__button-icon::after {
+  -webkit-transform: translate(0.1rem) rotate(135deg);
+          transform: translate(0.1rem) rotate(135deg);
+}
+
+.recipe-option__button[disabled] {
+  opacity: .5;
+  cursor: default;
+}
+
+@media (min-width: 48em) {
+  .recipe-option__button:not([disabled]):hover .recipe-option__button-icon {
+    -webkit-box-shadow: 0rem 0rem 0rem .3rem currentColor;
+            box-shadow: 0rem 0rem 0rem .3rem currentColor;
+  }
+}
+
+.recipe-option__button-icon {
+  position: absolute;
+  top: 1.5rem;
+  right: 1.5rem;
+  width: 2rem;
+  height: 2rem;
+  border-radius: 5rem;
+  -webkit-box-shadow: 0rem 0rem 0rem .2rem currentColor;
+          box-shadow: 0rem 0rem 0rem .2rem currentColor;
+  -webkit-transition: -webkit-box-shadow .4s;
+  transition: -webkit-box-shadow .4s;
+  transition: box-shadow .4s;
+  transition: box-shadow .4s, -webkit-box-shadow .4s;
+}
+
+.recipe-option__button-icon::before, .recipe-option__button-icon::after {
+  content: "";
+  display: block;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin-top: -.1rem;
+  margin-left: -.5rem;
+  width: 1rem;
+  height: .2rem;
+  background: currentColor;
+  border-radius: .2rem;
+  -webkit-transition: -webkit-transform .4s;
+  transition: -webkit-transform .4s;
+  transition: transform .4s;
+  transition: transform .4s, -webkit-transform .4s;
+}
+
+.recipe-option__button-icon::after {
+  -webkit-transform: rotate(90deg);
+          transform: rotate(90deg);
+}
+
+@media (min-width: 48em) {
+  .recipe-option__button-icon {
+    top: 2rem;
+  }
+}
+
+.recipe-option__tooltip {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 5rem;
+  height: 100%;
+  background: #000000;
+  border-left: 0.1rem solid #ffffff;
+  border-top: 0.1rem solid #ffffff;
+  border-bottom: 0.1rem solid #ffffff;
+  text-decoration: none;
+}
+
+.recipe-option__tooltip:hover .recipe-option__tooltip-icon {
+  color: #ffffff;
+  background: #000000;
+}
+
+.recipe-option__tooltip-icon {
+  position: absolute;
+  top: 1.3rem;
+  left: 1.5rem;
+  width: 2rem;
+  height: 2rem;
+  border-radius: 5rem;
+  color: #000000;
+  background: #ffffff;
+  -webkit-box-shadow: 0 0 0 0.2rem #ffffff;
+          box-shadow: 0 0 0 0.2rem #ffffff;
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+.recipe-option__tooltip-icon::before {
+  content: "";
+  display: block;
+  position: absolute;
+  top: .4rem;
+  left: 50%;
+  margin-left: -.1rem;
+  width: .2rem;
+  height: .2rem;
+  border-radius: 5rem;
+  background: currentColor;
+}
+
+.recipe-option__tooltip-icon::after {
+  content: "";
+  display: block;
+  position: absolute;
+  top: .8rem;
+  left: 50%;
+  margin-left: -.1rem;
+  width: .2rem;
+  height: .8rem;
+  border-radius: 5rem;
+  background: currentColor;
+}
+
+@media (min-width: 48em) {
+  .recipe-option__tooltip-icon {
+    top: 2rem;
+  }
+}
+
+.recipe-option__tooltip-icon--relative {
+  position: relative;
+  display: inline-block;
+  top: auto;
+  left: auto;
+  margin-right: 1.5rem;
+  vertical-align: middle;
+}
+
+.recipe-option__tooltip-icon--dark {
+  background: #000000;
+}
+
+.recipe-option__tooltip-icon--dark::before, .recipe-option__tooltip-icon--dark::after {
+  background: #ffffff;
+}
+
+/*------------------------------------*\
+    Recipe Email Page
+\*------------------------------------*/
+.recipe-email {
+  min-height: calc(100vh - 6rem);
+}
+
+@media (min-width: 90em) {
+  .recipe-email {
+    min-height: calc(100vh - 8rem);
+  }
+}
+
+.recipe-email__title {
+  margin: 3rem auto;
+  max-width: 64rem;
+  text-align: center;
+}
+
+.recipe-email__form {
+  margin: 0 auto;
+  max-width: 43rem;
+  text-align: center;
+}
+
+/*------------------------------------*\
+    Transition
+\*------------------------------------*/
+.slide-enter-active {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  padding-top: 6rem;
+  -webkit-animation: slide-in 1s;
+          animation: slide-in 1s;
+  z-index: 10;
+}
+
+@media (min-width: 48em) {
+  .slide-enter-active {
+    padding-top: 8rem;
+  }
+}
+
+.slide-leave-active {
+  -webkit-animation: slide-out 1s;
+          animation: slide-out 1s;
+}
+
+@-webkit-keyframes slide-in {
+  0% {
+    -webkit-transform: translateX(100%);
+            transform: translateX(100%);
+  }
+  100% {
+    -webkit-transform: translateX(0%);
+            transform: translateX(0%);
+  }
+}
+
+@keyframes slide-in {
+  0% {
+    -webkit-transform: translateX(100%);
+            transform: translateX(100%);
+  }
+  100% {
+    -webkit-transform: translateX(0%);
+            transform: translateX(0%);
+  }
+}
+
+@-webkit-keyframes slide-out {
+  0% {
+    -webkit-transform: translateX(0%);
+            transform: translateX(0%);
+  }
+  100% {
+    -webkit-transform: translateX(0%);
+            transform: translateX(0%);
+  }
+}
+
+@keyframes slide-out {
+  0% {
+    -webkit-transform: translateX(0%);
+            transform: translateX(0%);
+  }
+  100% {
+    -webkit-transform: translateX(0%);
+            transform: translateX(0%);
+  }
+}
+
+.fade-enter-active {
+  width: 100%;
+  -webkit-animation: fade-in .4s;
+          animation: fade-in .4s;
+}
+
+.fade-leave-active {
+  position: absolute;
+  left: 0;
+  width: 100%;
+  -webkit-animation: fade-out .4s;
+          animation: fade-out .4s;
+}
+
+@-webkit-keyframes fade-in {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes fade-in {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@-webkit-keyframes fade-out {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes fade-out {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@charset "UTF-8";
+/*------------------------------------*\
+    SASS Tools
+\*------------------------------------*/
+/*------------------------------------*\
+    Variables
+\*------------------------------------*/
+/*------------------------------------*\
+    Responsive variables
+\*------------------------------------*/
+/*----------------------------------------------------*\
+    https://github.com/MoOx/postcss-cssnext/issues/253
+    We can't use custom props in media
+    queries so using a sass variable to
+    share between :root and custom media queries
+\*----------------------------------------------------*/
+/*------------------------------------*\
+    Color variables
+\*------------------------------------*/
+/*------------------------------------*\
+ 	Site z indexing
+\*------------------------------------*/
+/*------------------------------------*\
+    Font variables
+\*------------------------------------*/
+/*------------------------------------*\
+    § Grid
+\*------------------------------------*/
+/*------------------------------------*\
+    Utilities
+\*------------------------------------*/
+/*------------------------------------*\
+    SASS functions
+\*------------------------------------*/
+/*------------------------------------*\
+    § Grid column widths
+\*------------------------------------*/
+/*------------------------------------*\
+    § em
+\*------------------------------------*/
+/*------------------------------------*\
+     § Z index
+\*------------------------------------*/
+/*------------------------------------*\
+    SASS mixins
+\*------------------------------------*/
+/*------------------------------------*\
+     § Input placeholder
+\*------------------------------------*/
+/*------------------------------------*\
+     § Pseudo
+\*------------------------------------*/
+/*------------------------------------*\
+     § Responsive Ratio
+\*------------------------------------*/
+/*------------------------------------*\
+    § Grid container
+\*------------------------------------*/
+/*------------------------------------*\
+    § Grid item
+\*------------------------------------*/
+/*------------------------------------*\
+    § Title
+\*------------------------------------*/
+/*------------------------------------*\
+    Custom semantic media queries
+\*------------------------------------*/
+/*----------------------------------------------------*\
+    https://github.com/MoOx/postcss-cssnext/issues/253
+    We can't use variables in media
+    queries so using a sass variable to
+    share between :root and custom media queries
+    @see variables/responsive.scss
+\*----------------------------------------------------*/
+/*------------------------------------*\
+    Overlay
+\*------------------------------------*/
+.overlay {
+  position: fixed;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.9);
+  opacity: 0;
+  overflow: hidden;
+  z-index: 11;
+  -webkit-transition: opacity .4s, left 0s .4s;
+  transition: opacity .4s, left 0s .4s;
+}
+
+.overlay.is-active {
+  left: 0;
+  opacity: 1;
+  -webkit-transition: opacity .4s, left 0s;
+  transition: opacity .4s, left 0s;
+}
+
+.overlay__inner {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  position: relative;
+  margin: 5rem 2rem;
+  padding: 2.5rem;
+  color: #000000;
+  background: #ffffff;
+  width: 100%;
+  max-width: 71rem;
+  max-height: calc(100% - 10rem);
+  z-index: 2;
+}
+
+@media (min-width: 48em) {
+  .overlay__inner {
+    padding: 5rem;
+  }
+}
+
+.overlay__inner-center {
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.overlay__inner--vimeo {
+  display: inline;
+  display: initial;
+  max-width: 130rem;
+  padding: 0;
+}
+
+@media (min-width: 64em) {
+  .overlay__inner--vimeo {
+    margin: 5rem 20rem;
+  }
+}
+
+@media (min-width: 100em) {
+  .overlay__inner--vimeo {
+    margin: 5rem 10rem;
+  }
+}
+
+.overlay__content {
+  overflow: auto;
+}
+
+.overlay__content--full {
+  width: 100%;
+}
+
+.overlay__text p {
+  margin-bottom: 1rem;
+}
+
+.overlay__close {
+  position: absolute;
+  top: -4rem;
+  right: 0;
+  padding-right: 2rem;
+  color: #ffffff;
+}
+
+.overlay__close::before, .overlay__close::after {
+  content: "";
+  display: block;
+  position: absolute;
+  top: 50%;
+  right: 0;
+  width: 1.4rem;
+  height: .1rem;
+  background: #ffffff;
+}
+
+.overlay__close::before {
+  -webkit-transform: rotate(-45deg);
+          transform: rotate(-45deg);
+}
+
+.overlay__close::after {
+  -webkit-transform: rotate(45deg);
+          transform: rotate(45deg);
+}
+
+.overlay__close-full {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+}
+
+.overlay__currency {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+@media (min-width: 48em) {
+  .overlay__currency {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    margin-left: -2.2rem;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+  }
+}
+
+.overlay__recipe {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  margin-left: -2.2rem;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+}
+
+.overlay__flag-icon {
+  width: 20%;
+  display: block;
+  margin: 0 auto;
+}
+
+@media (min-width: 48em) {
+  .overlay__flag-icon {
+    width: 80%;
+  }
+}
+
+.overlay__flag-icon--light {
+  -webkit-filter: invert(100%);
+          filter: invert(100%);
+}
+
+.overlay__recipe-icon {
+  width: 80%;
+  display: block;
+  margin: 0 auto 2rem;
+}
+
+@media (min-width: 48em) {
+  .overlay__recipe-icon {
+    margin: 0 auto;
+  }
+}
+
+.overlay__currency-button,
+.overlay__recipe-button {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 1rem;
+  border: 0.1rem solid #000000;
+  text-align: center;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+@media (min-width: 48em) {
+  .overlay__currency-button,
+  .overlay__recipe-button {
+    -ms-flex-preferred-size: calc(25% - 2.2rem);
+        flex-basis: calc(25% - 2.2rem);
+    max-width: calc(25% - 2.2rem);
+    margin-left: 2.2rem;
+    padding: 3rem 3rem 2rem;
+  }
+}
+
+.overlay__currency-button.currency-active,
+.overlay__recipe-button.currency-active {
+  background-color: #000000;
+  color: #ffffff;
+}
+
+.overlay__recipe-button {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-preferred-size: calc(50% - 2.2rem);
+      flex-basis: calc(50% - 2.2rem);
+  max-width: calc(50% - 2.2rem);
+  margin-left: 2.2rem;
+  padding: 2rem;
+  border: 0.1rem solid #000000;
+  text-align: center;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+@media (min-width: 48em) {
+  .overlay__recipe-button {
+    -ms-flex-preferred-size: calc(25% - 2.2rem);
+        flex-basis: calc(25% - 2.2rem);
+    max-width: calc(25% - 2.2rem);
+    margin-left: 2.2rem;
+    padding: 3rem 3rem 2rem;
+  }
+}
+
+@media (min-width: 48em) {
+  .overlay__recipe-button {
+    -ms-flex-preferred-size: calc(50% - 2.2rem);
+        flex-basis: calc(50% - 2.2rem);
+    max-width: calc(50% - 2.2rem);
+    margin-left: 2.2rem;
+    padding: 3rem 3rem 2rem;
+  }
+}
+
+.overlay__currency-icon {
+  width: 2rem;
+  height: 2rem;
+  margin-top: 1rem;
+  position: relative;
+  border: 0.1rem solid #000000;
+  border-radius: 100%;
+}
+
+@media (min-width: 48em) {
+  .overlay__currency-icon {
+    margin-top: 2rem;
+  }
+}
+
+.currency-active .overlay__currency-icon {
+  border: 0.1rem solid #ffffff;
+}
+
+.currency-active .overlay__currency-icon::before, .currency-active .overlay__currency-icon::after {
+  content: "";
+  display: block;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin-top: -.1rem;
+  margin-left: -.5rem;
+  width: 1rem;
+  height: .2rem;
+  background: currentColor;
+  border-radius: .2rem;
+}
+
+.currency-active .overlay__currency-icon::before {
+  -webkit-transform: translate(-0.3rem, 0.2rem) rotate(45deg) scaleX(0.4);
+          transform: translate(-0.3rem, 0.2rem) rotate(45deg) scaleX(0.4);
+}
+
+.currency-active .overlay__currency-icon::after {
+  -webkit-transform: translate(0.1rem) rotate(135deg);
+          transform: translate(0.1rem) rotate(135deg);
+}
+
+.overlay__recipe-img {
+  margin: auto;
+}
+
+.overlay__grid {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  margin-left: -2.2rem;
+}
+
+.overlay__grid-item {
+  -ms-flex-preferred-size: calc(66.66667% - 2.2rem);
+      flex-basis: calc(66.66667% - 2.2rem);
+  max-width: calc(66.66667% - 2.2rem);
+  margin-left: 2.2rem;
+}
+
+@media (min-width: 48em) {
+  .overlay__grid-item {
+    -ms-flex-preferred-size: calc(50% - 2.2rem);
+        flex-basis: calc(50% - 2.2rem);
+    max-width: calc(50% - 2.2rem);
+    margin-left: 2.2rem;
+  }
+}
+
+.overlay__grid-item--small {
+  -ms-flex-preferred-size: calc(33.33333% - 2.2rem);
+      flex-basis: calc(33.33333% - 2.2rem);
+  max-width: calc(33.33333% - 2.2rem);
+  margin-left: 2.2rem;
+}
+
+@media (min-width: 48em) {
+  .overlay__grid-item--small {
+    -ms-flex-preferred-size: calc(50% - 2.2rem);
+        flex-basis: calc(50% - 2.2rem);
+    max-width: calc(50% - 2.2rem);
+    margin-left: 2.2rem;
+  }
+}
+
+.overlay__cart-notice {
+  padding: 1rem;
+  margin-bottom: 2rem;
+  background: #0F834D;
+  color: #ffffff;
+  border-radius: 0.3rem;
+}
+

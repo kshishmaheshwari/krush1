@@ -1,0 +1,973 @@
+@charset "UTF-8";
+/*------------------------------------*\
+    SASS Tools
+\*------------------------------------*/
+/*------------------------------------*\
+    Variables
+\*------------------------------------*/
+/*------------------------------------*\
+    Responsive variables
+\*------------------------------------*/
+/*----------------------------------------------------*\
+    https://github.com/MoOx/postcss-cssnext/issues/253
+    We can't use custom props in media
+    queries so using a sass variable to
+    share between :root and custom media queries
+\*----------------------------------------------------*/
+/*------------------------------------*\
+    Color variables
+\*------------------------------------*/
+/*------------------------------------*\
+ 	Site z indexing
+\*------------------------------------*/
+/*------------------------------------*\
+    Font variables
+\*------------------------------------*/
+/*------------------------------------*\
+    § Grid
+\*------------------------------------*/
+/*------------------------------------*\
+    Utilities
+\*------------------------------------*/
+/*------------------------------------*\
+    SASS functions
+\*------------------------------------*/
+/*------------------------------------*\
+    § Grid column widths
+\*------------------------------------*/
+/*------------------------------------*\
+    § em
+\*------------------------------------*/
+/*------------------------------------*\
+     § Z index
+\*------------------------------------*/
+/*------------------------------------*\
+    SASS mixins
+\*------------------------------------*/
+/*------------------------------------*\
+     § Input placeholder
+\*------------------------------------*/
+/*------------------------------------*\
+     § Pseudo
+\*------------------------------------*/
+/*------------------------------------*\
+     § Responsive Ratio
+\*------------------------------------*/
+/*------------------------------------*\
+    § Grid container
+\*------------------------------------*/
+/*------------------------------------*\
+    § Grid item
+\*------------------------------------*/
+/*------------------------------------*\
+    § Title
+\*------------------------------------*/
+/*------------------------------------*\
+    Custom semantic media queries
+\*------------------------------------*/
+/*----------------------------------------------------*\
+    https://github.com/MoOx/postcss-cssnext/issues/253
+    We can't use variables in media
+    queries so using a sass variable to
+    share between :root and custom media queries
+    @see variables/responsive.scss
+\*----------------------------------------------------*/
+.hero {
+  position: relative;
+  padding: 2rem 0 4rem;
+  background-color: #000000;
+  color: #ffffff;
+}
+
+@media (min-width: 64em) {
+  .hero {
+    padding: 8rem 0 6rem;
+  }
+}
+
+.hero:not(.no-border) {
+  margin-bottom: 1rem;
+}
+
+@media (min-width: 64em) {
+  .hero:not(.no-border) {
+    padding: 8rem 0 0;
+    margin-bottom: 2rem;
+  }
+}
+
+.hero:not(.no-border)::after {
+  content: "";
+  display: block;
+  position: absolute;
+  bottom: -1rem;
+  width: 100%;
+  height: 1.7rem;
+  background-image: url(//cdn.shopify.com/s/files/1/0428/8498/9091/t/21/assets/hero-border.jpg?v=9396253500500364630);
+  background-position: center;
+  background-size: cover;
+}
+
+@media (min-width: 64em) {
+  .hero:not(.no-border)::after {
+    bottom: -2rem;
+    height: 2.5rem;
+    background-image: url(//cdn.shopify.com/s/files/1/0428/8498/9091/t/21/assets/hero-border-desktop.jpg?v=8396927021248050518);
+  }
+}
+
+@media (max-width: 63.999em) {
+  .hero--media-switched {
+    padding-top: 0;
+  }
+}
+
+.hero--image {
+  padding: 0;
+  background-color: #ffffff;
+}
+
+.hero--is-hair {
+  margin-bottom: 1rem;
+}
+
+@media (min-width: 64em) {
+  .hero--is-hair {
+    padding: 8rem 0 0;
+    margin-bottom: 2rem;
+  }
+}
+
+.hero--is-hair::after {
+  content: "";
+  display: block;
+  position: absolute;
+  bottom: -1rem;
+  width: 100%;
+  height: 1.7rem;
+  background-image: url(//cdn.shopify.com/s/files/1/0428/8498/9091/t/21/assets/hero-hair-border.jpg?v=13731129539622404478);
+  background-position: center;
+  background-size: cover;
+}
+
+@media (min-width: 64em) {
+  .hero--is-hair::after {
+    bottom: -2rem;
+    height: 2.5rem;
+    background-image: url(//cdn.shopify.com/s/files/1/0428/8498/9091/t/21/assets/hero-hair-border-desktop.jpg?v=12945645350004521965);
+  }
+}
+
+.hero--superfans {
+  background: #000000;
+  color: #ffffff;
+}
+
+@media (max-width: 47.999em) {
+  .hero--superfans {
+    text-align: center;
+    padding: 4rem 0;
+  }
+  .hero--superfans .hero__media {
+    display: none;
+  }
+}
+
+.hero--light {
+  background: #ffffff;
+  color: #000000;
+}
+
+.hero--no-mobile-padding {
+  padding-bottom: 0;
+}
+
+@media (min-width: 64em) {
+  .hero__content {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    margin-left: -2.2rem;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+  }
+}
+
+@media (min-width: 64em) {
+  .hero__content--switched {
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: reverse;
+        -ms-flex-direction: row-reverse;
+            flex-direction: row-reverse;
+  }
+}
+
+@media (min-width: 64em) {
+  .hero__copy {
+    -ms-flex-preferred-size: calc(41.66667% - 2.2rem);
+        flex-basis: calc(41.66667% - 2.2rem);
+    max-width: calc(41.66667% - 2.2rem);
+    margin-left: 2.2rem;
+    padding-top: 6rem;
+    padding-bottom: 8rem;
+  }
+  .hero__content--wider-text .hero__copy {
+    -ms-flex-preferred-size: calc(50% - 2.2rem);
+        flex-basis: calc(50% - 2.2rem);
+    max-width: calc(50% - 2.2rem);
+    margin-left: 2.2rem;
+  }
+}
+
+.hero__copy--no-padding-top {
+  padding-top: 2rem;
+}
+
+@media (min-width: 64em) {
+  .hero__copy--no-padding-top {
+    padding-top: 0;
+  }
+}
+
+.hero__box-copy {
+  background-color: #ffffff;
+  color: #000000;
+  padding: 2.6rem 2.2rem;
+  margin-top: 1.8rem;
+}
+
+@media (min-width: 48em) {
+  .hero__box-copy {
+    max-width: 38.7rem;
+  }
+}
+
+.hero__media {
+  width: calc(100% + 6rem);
+  margin-left: -3rem;
+  margin-top: 3rem;
+}
+
+@media (min-width: 64em) {
+  .hero__media {
+    -ms-flex-preferred-size: calc(50% - 2.2rem);
+        flex-basis: calc(50% - 2.2rem);
+    max-width: calc(50% - 2.2rem);
+    margin-left: 2.2rem;
+    margin-top: 0;
+  }
+  .hero__content--wider-text .hero__media {
+    -ms-flex-preferred-size: calc(41.66667% - 2.2rem);
+        flex-basis: calc(41.66667% - 2.2rem);
+    max-width: calc(41.66667% - 2.2rem);
+    margin-left: 2.2rem;
+  }
+}
+
+@media (min-width: 64em) {
+  .hero__media .media {
+    height: 100%;
+  }
+}
+
+.hero__media .media__item {
+  max-width: 100%;
+}
+
+@media (min-width: 64em) {
+  .hero__media .media__item {
+    -o-object-fit: cover;
+       object-fit: cover;
+    margin-left: auto;
+  }
+}
+
+@media (max-width: 63.999em) {
+  .hero--media-switched .hero__media {
+    margin-top: 0;
+    margin-bottom: 4rem;
+  }
+}
+
+.hero__media--switched {
+  margin-top: 0;
+  margin-bottom: 3rem;
+}
+
+@media (min-width: 64em) {
+  .hero__media--switched {
+    margin-bottom: 0;
+  }
+}
+
+.hero__media--padding-top {
+  padding-top: 7rem;
+}
+
+@media (min-width: 64em) {
+  .hero__media--padding-top {
+    padding-top: 3rem;
+  }
+}
+
+.hero__title-image {
+  max-width: 24rem;
+}
+
+@media (min-width: 64em) {
+  .hero__title-image {
+    max-width: 100%;
+  }
+}
+
+@charset "UTF-8";
+/*------------------------------------*\
+    SASS Tools
+\*------------------------------------*/
+/*------------------------------------*\
+    Variables
+\*------------------------------------*/
+/*------------------------------------*\
+    Responsive variables
+\*------------------------------------*/
+/*----------------------------------------------------*\
+    https://github.com/MoOx/postcss-cssnext/issues/253
+    We can't use custom props in media
+    queries so using a sass variable to
+    share between :root and custom media queries
+\*----------------------------------------------------*/
+/*------------------------------------*\
+    Color variables
+\*------------------------------------*/
+/*------------------------------------*\
+ 	Site z indexing
+\*------------------------------------*/
+/*------------------------------------*\
+    Font variables
+\*------------------------------------*/
+/*------------------------------------*\
+    § Grid
+\*------------------------------------*/
+/*------------------------------------*\
+    Utilities
+\*------------------------------------*/
+/*------------------------------------*\
+    SASS functions
+\*------------------------------------*/
+/*------------------------------------*\
+    § Grid column widths
+\*------------------------------------*/
+/*------------------------------------*\
+    § em
+\*------------------------------------*/
+/*------------------------------------*\
+     § Z index
+\*------------------------------------*/
+/*------------------------------------*\
+    SASS mixins
+\*------------------------------------*/
+/*------------------------------------*\
+     § Input placeholder
+\*------------------------------------*/
+/*------------------------------------*\
+     § Pseudo
+\*------------------------------------*/
+/*------------------------------------*\
+     § Responsive Ratio
+\*------------------------------------*/
+/*------------------------------------*\
+    § Grid container
+\*------------------------------------*/
+/*------------------------------------*\
+    § Grid item
+\*------------------------------------*/
+/*------------------------------------*\
+    § Title
+\*------------------------------------*/
+/*------------------------------------*\
+    Custom semantic media queries
+\*------------------------------------*/
+/*----------------------------------------------------*\
+    https://github.com/MoOx/postcss-cssnext/issues/253
+    We can't use variables in media
+    queries so using a sass variable to
+    share between :root and custom media queries
+    @see variables/responsive.scss
+\*----------------------------------------------------*/
+/*------------------------------------*\
+    Fixed Buttons
+\*------------------------------------*/
+.fixed-buttons {
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  width: 100%;
+  z-index: 7;
+}
+
+.fixed-buttons__wrap {
+  padding: 0;
+}
+
+@media (min-width: 90em) {
+  .fixed-buttons__wrap {
+    padding: 0 8%;
+  }
+}
+
+.fixed-buttons__inner-wrap {
+  position: relative;
+}
+
+.fixed-buttons__box {
+  position: absolute;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+  bottom: 0;
+  right: 0;
+  width: 100%;
+}
+
+@media (min-width: 48em) {
+  .fixed-buttons__box {
+    width: auto;
+  }
+}
+
+.fixed-buttons__button {
+  width: 50%;
+  border-bottom: 0;
+  -webkit-transition: .4s;
+  transition: .4s;
+  -webkit-transition-property: border, color;
+  transition-property: border, color;
+}
+
+@media (min-width: 48em) {
+  .fixed-buttons__button {
+    width: auto;
+    margin-left: -.1rem;
+  }
+}
+
+.fixed-buttons__button:hover {
+  border-color: #000000;
+}
+
+@charset "UTF-8";
+/*------------------------------------*\
+    SASS Tools
+\*------------------------------------*/
+/*------------------------------------*\
+    Variables
+\*------------------------------------*/
+/*------------------------------------*\
+    Responsive variables
+\*------------------------------------*/
+/*----------------------------------------------------*\
+    https://github.com/MoOx/postcss-cssnext/issues/253
+    We can't use custom props in media
+    queries so using a sass variable to
+    share between :root and custom media queries
+\*----------------------------------------------------*/
+/*------------------------------------*\
+    Color variables
+\*------------------------------------*/
+/*------------------------------------*\
+ 	Site z indexing
+\*------------------------------------*/
+/*------------------------------------*\
+    Font variables
+\*------------------------------------*/
+/*------------------------------------*\
+    § Grid
+\*------------------------------------*/
+/*------------------------------------*\
+    Utilities
+\*------------------------------------*/
+/*------------------------------------*\
+    SASS functions
+\*------------------------------------*/
+/*------------------------------------*\
+    § Grid column widths
+\*------------------------------------*/
+/*------------------------------------*\
+    § em
+\*------------------------------------*/
+/*------------------------------------*\
+     § Z index
+\*------------------------------------*/
+/*------------------------------------*\
+    SASS mixins
+\*------------------------------------*/
+/*------------------------------------*\
+     § Input placeholder
+\*------------------------------------*/
+/*------------------------------------*\
+     § Pseudo
+\*------------------------------------*/
+/*------------------------------------*\
+     § Responsive Ratio
+\*------------------------------------*/
+/*------------------------------------*\
+    § Grid container
+\*------------------------------------*/
+/*------------------------------------*\
+    § Grid item
+\*------------------------------------*/
+/*------------------------------------*\
+    § Title
+\*------------------------------------*/
+/*------------------------------------*\
+    Custom semantic media queries
+\*------------------------------------*/
+/*----------------------------------------------------*\
+    https://github.com/MoOx/postcss-cssnext/issues/253
+    We can't use variables in media
+    queries so using a sass variable to
+    share between :root and custom media queries
+    @see variables/responsive.scss
+\*----------------------------------------------------*/
+.accordion {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  width: 100%;
+}
+
+.accordion__item {
+  margin: 0;
+}
+
+.accordion__item.is-active .accordion__toggle-icon::after {
+  opacity: 0;
+  -webkit-transform: translate(-50%, -50%) rotate(180deg);
+          transform: translate(-50%, -50%) rotate(180deg);
+}
+
+.accordion__item:hover .accordion__toggle {
+  color: #000000;
+}
+
+.accordion--dark .accordion__item:hover .accordion__toggle {
+  color: #ffffff;
+}
+
+.accordion__toggle {
+  position: relative;
+  display: block;
+  width: calc(100% + 6rem);
+  margin: 0 -3rem;
+  padding: 2rem 8rem 2rem 3rem;
+  background-color: transparent;
+  font-size: 1.5rem;
+  font-family: "Madras", "sans-serif";
+  font-weight: bold;
+  border: 0;
+  text-align: left;
+  cursor: pointer;
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+  -webkit-transition: background .4s;
+  transition: background .4s;
+}
+
+.accordion__toggle::after {
+  content: "";
+  display: block;
+  position: absolute;
+  bottom: 0;
+  left: 3rem;
+  right: 3rem;
+  border-bottom: 0.1rem solid #C7C7C7;
+}
+
+@media (min-width: 48em) {
+  .accordion__toggle::after {
+    left: 4rem;
+    right: 4rem;
+  }
+}
+
+@media (min-width: 48em) {
+  .accordion__toggle {
+    width: calc(100% + 8rem);
+    margin: 0 -4rem;
+    padding: 4rem 10rem 4rem 4rem;
+  }
+}
+
+.accordion__toggle:hover {
+  background: #F3F3F3;
+}
+
+.accordion--dark .accordion__toggle:hover {
+  background: #000000;
+}
+
+.accordion__toggle--gift-card::after {
+  border-bottom: 0.1rem solid #EB84C9;
+}
+
+.accordion__heading {
+  margin: 0;
+  -webkit-transition: all 0.2s ease-in-out;
+  transition: all 0.2s ease-in-out;
+}
+
+.accordion__toggle-icon {
+  display: block;
+  position: absolute;
+  top: 1.7rem;
+  right: 5rem;
+  width: 2.9rem;
+  height: 2.9rem;
+  padding: 1.2rem;
+}
+
+@media (min-width: 48em) {
+  .accordion__toggle-icon {
+    top: 3.5rem;
+    right: 6rem;
+  }
+}
+
+.accordion__toggle-icon::before, .accordion__toggle-icon::after {
+  content: "";
+  display: block;
+  position: absolute;
+  width: 1.6rem;
+  height: 0.18rem;
+  background: #000000;
+  -webkit-transition: .3s all ease-in-out;
+  transition: .3s all ease-in-out;
+}
+
+.accordion__toggle-icon::before {
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+}
+
+.accordion__toggle-icon::after {
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%) rotate(90deg);
+          transform: translate(-50%, -50%) rotate(90deg);
+}
+
+.accordion--dark .accordion__toggle-icon::before, .accordion--dark .accordion__toggle-icon::after {
+  background: #ffffff;
+}
+
+.accordion__content-container {
+  height: 0;
+  overflow: hidden;
+  -webkit-transition: .3s all ease-in-out;
+  transition: .3s all ease-in-out;
+}
+
+.accordion__content-container[aria-hidden="true"] {
+  visibility: hidden;
+}
+
+.accordion__content {
+  padding: 4rem 0;
+}
+
+@media (min-width: 64em) {
+  .accordion__content--slim {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    margin-left: -2.2rem;
+  }
+}
+
+@media (min-width: 64em) {
+  .accordion__content--slim .accordion__grid {
+    -ms-flex-preferred-size: calc(58.33333% - 0rem);
+        flex-basis: calc(58.33333% - 0rem);
+    max-width: calc(58.33333% - 0rem);
+    margin-left: 0rem;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    margin-left: -0rem;
+  }
+}
+
+@media (min-width: 90em) {
+  .accordion__content--slim .accordion__grid {
+    -ms-flex-preferred-size: calc(66.66667% - 0rem);
+        flex-basis: calc(66.66667% - 0rem);
+    max-width: calc(66.66667% - 0rem);
+    margin-left: 0rem;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    margin-left: -0rem;
+  }
+}
+
+@media (min-width: 64em) {
+  .accordion__content--slim .accordion__media {
+    -ms-flex-preferred-size: calc(42.85714% - 2.2rem);
+        flex-basis: calc(42.85714% - 2.2rem);
+    max-width: calc(42.85714% - 2.2rem);
+    margin-left: 2.2rem;
+  }
+}
+
+@media (min-width: 90em) {
+  .accordion__content--slim .accordion__media {
+    -ms-flex-preferred-size: calc(37.5% - 2.2rem);
+        flex-basis: calc(37.5% - 2.2rem);
+    max-width: calc(37.5% - 2.2rem);
+    margin-left: 2.2rem;
+  }
+}
+
+@media (min-width: 64em) {
+  .accordion__content--slim .accordion__copy {
+    -ms-flex-preferred-size: calc(57.14286% - 2.2rem);
+        flex-basis: calc(57.14286% - 2.2rem);
+    max-width: calc(57.14286% - 2.2rem);
+    margin-left: 2.2rem;
+  }
+}
+
+@media (min-width: 90em) {
+  .accordion__content--slim .accordion__copy {
+    -ms-flex-preferred-size: calc(62.5% - 2.2rem);
+        flex-basis: calc(62.5% - 2.2rem);
+    max-width: calc(62.5% - 2.2rem);
+    margin-left: 2.2rem;
+  }
+}
+
+.accordion__recommended {
+  margin-top: 4rem;
+}
+
+@media (min-width: 64em) {
+  .accordion__recommended {
+    -ms-flex-preferred-size: calc(41.66667% - 2.2rem);
+        flex-basis: calc(41.66667% - 2.2rem);
+    max-width: calc(41.66667% - 2.2rem);
+    margin-left: 2.2rem;
+    margin-top: 0;
+  }
+}
+
+@media (min-width: 90em) {
+  .accordion__recommended {
+    -ms-flex-preferred-size: calc(33.33333% - 2.2rem);
+        flex-basis: calc(33.33333% - 2.2rem);
+    max-width: calc(33.33333% - 2.2rem);
+    margin-left: 2.2rem;
+  }
+}
+
+.accordion__recommended-product {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.accordion__recommended-image {
+  -ms-flex-preferred-size: 15rem;
+      flex-basis: 15rem;
+  max-width: 15rem;
+  -ms-flex-negative: 0;
+      flex-shrink: 0;
+}
+
+.accordion__grid {
+  margin-bottom: 2rem;
+}
+
+@media (min-width: 48em) {
+  .accordion__grid {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    margin-left: -2.2rem;
+  }
+}
+
+.accordion__media {
+  margin-bottom: 2rem;
+}
+
+@media (min-width: 48em) {
+  .accordion__media {
+    -ms-flex-preferred-size: calc(25% - 2.2rem);
+        flex-basis: calc(25% - 2.2rem);
+    max-width: calc(25% - 2.2rem);
+    margin-left: 2.2rem;
+    margin-bottom: 0;
+  }
+}
+
+.accordion__copy h2 {
+  font-size: 1.8rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 0;
+  margin-bottom: 1.6rem;
+}
+
+.accordion__copy h2:not(:first-child) {
+  margin-top: 2rem;
+}
+
+@media (min-width: 48em) {
+  .accordion__copy {
+    -ms-flex-preferred-size: calc(75% - 2.2rem);
+        flex-basis: calc(75% - 2.2rem);
+    max-width: calc(75% - 2.2rem);
+    margin-left: 2.2rem;
+  }
+}
+
+@media (min-width: 64em) {
+  .accordion__copy {
+    -ms-flex-preferred-size: calc(50% - 2.2rem);
+        flex-basis: calc(50% - 2.2rem);
+    max-width: calc(50% - 2.2rem);
+    margin-left: 2.2rem;
+  }
+}
+
+@media (min-width: 48em) {
+  .accordion__copy--wide {
+    -ms-flex-preferred-size: calc(100% - 2.2rem);
+        flex-basis: calc(100% - 2.2rem);
+    max-width: calc(100% - 2.2rem);
+    margin-left: 2.2rem;
+  }
+}
+
+@media (min-width: 64em) {
+  .accordion__copy--wide {
+    -ms-flex-preferred-size: calc(75% - 2.2rem);
+        flex-basis: calc(75% - 2.2rem);
+    max-width: calc(75% - 2.2rem);
+    margin-left: 2.2rem;
+  }
+}
+
+@charset "UTF-8";
+/*------------------------------------*\
+    SASS Tools
+\*------------------------------------*/
+/*------------------------------------*\
+    Variables
+\*------------------------------------*/
+/*------------------------------------*\
+    Responsive variables
+\*------------------------------------*/
+/*----------------------------------------------------*\
+    https://github.com/MoOx/postcss-cssnext/issues/253
+    We can't use custom props in media
+    queries so using a sass variable to
+    share between :root and custom media queries
+\*----------------------------------------------------*/
+/*------------------------------------*\
+    Color variables
+\*------------------------------------*/
+/*------------------------------------*\
+ 	Site z indexing
+\*------------------------------------*/
+/*------------------------------------*\
+    Font variables
+\*------------------------------------*/
+/*------------------------------------*\
+    § Grid
+\*------------------------------------*/
+/*------------------------------------*\
+    Utilities
+\*------------------------------------*/
+/*------------------------------------*\
+    SASS functions
+\*------------------------------------*/
+/*------------------------------------*\
+    § Grid column widths
+\*------------------------------------*/
+/*------------------------------------*\
+    § em
+\*------------------------------------*/
+/*------------------------------------*\
+     § Z index
+\*------------------------------------*/
+/*------------------------------------*\
+    SASS mixins
+\*------------------------------------*/
+/*------------------------------------*\
+     § Input placeholder
+\*------------------------------------*/
+/*------------------------------------*\
+     § Pseudo
+\*------------------------------------*/
+/*------------------------------------*\
+     § Responsive Ratio
+\*------------------------------------*/
+/*------------------------------------*\
+    § Grid container
+\*------------------------------------*/
+/*------------------------------------*\
+    § Grid item
+\*------------------------------------*/
+/*------------------------------------*\
+    § Title
+\*------------------------------------*/
+/*------------------------------------*\
+    Custom semantic media queries
+\*------------------------------------*/
+/*----------------------------------------------------*\
+    https://github.com/MoOx/postcss-cssnext/issues/253
+    We can't use variables in media
+    queries so using a sass variable to
+    share between :root and custom media queries
+    @see variables/responsive.scss
+\*----------------------------------------------------*/
+/*------------------------------------------------------------------*\
+    Live Chat
+
+    !important props override external script styles
+    from Fresh Chat.
+    https://snippets.freshchat.com/js/fc-pre-chat-form-v2.js
+\*------------------------------------------------------------------*/
+.chat-fc-form-outer .fc-form ul li {
+  margin-bottom: 3.5rem !important;
+}
+
+.chat-fc-form-outer .fc-form ul li:last-of-type {
+  margin-bottom: 1.5rem !important;
+}
+
+.chat-fc-form-outer .fc-form ul li input {
+  font-family: "Madras", "sans-serif";
+  font-size: 1.6rem;
+  color: #000;
+  padding: 0.8rem !important;
+}
+
